@@ -1,0 +1,22 @@
+/*  将mycm.sql放到d盘
+*	进入mysql数据库
+*	执行以下操作
+*/
+
+
+
+
+create database conferencemanager;
+use conferencemanager;
+source d:/my.sql;
+create user 'roothandler'@'%' identified by '321';
+create user 'applyhandler'@'%' identified by '321';
+create user 'confhandler'@'%' identified by '321';
+create user 'personhandler'@'%' identified by '321';
+grant all on conferencemanager.* to 'roothandler'@'%' with grant option;
+grant all on conferencemanager.conferenceattr to 'confhandler'@'%';
+grant all on conferencemanager.category to 'confhandler'@'%';
+grant all on conferencemanager.adminattr to 'personhandler'@'%';
+grant all on conferencemanager.userattr to 'personhandler'@'%';
+grant all on conferencemanager.personattr to 'personhandler'@'%';
+grant all on conferencemanager.applydetailattr to 'applyhandler'@'%';
